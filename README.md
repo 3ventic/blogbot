@@ -1,10 +1,10 @@
 # Blog Bot
 
-Monitor RSS feeds and post new posts on Discord. [Add it to a server](https://discordapp.com/oauth2/authorize?client_id=197560356422418432&scope=bot&permissions=19456)
+Monitor RSS feeds and post new posts on Discord.
 
-## Usage
+## How to use
 
-If you have the "Manage Channel" permission, you can enable this on the channel by using !addfeed https://url-to-the/feed/. See !help for other commands.
+[Add it to a server](https://discordapp.com/oauth2/authorize?client_id=197560356422418432&scope=bot&permissions=19456). If you have the "Manage Channel" permission, you can enable updates on the channel by using !addfeed https://url-to-the/feed/. See !help for other commands.
 
 ## Running your own instance
 
