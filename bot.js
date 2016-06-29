@@ -187,8 +187,10 @@ function checkBlogs() {
 }
 setInterval(checkBlogs, 30000);
 
-process.on('SIGINT', function () {
+function cleanUpAndExit() {
     bot.logout(function () {
-        process.exit(0);
+        process.exit();
     });
-});
+}
+process.on('SIGINT', cleanUpAndExit);
+process.on('SIGTERM', cleanUpAndExit);
