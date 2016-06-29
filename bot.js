@@ -39,7 +39,7 @@ bot.on('message', function (message) {
                     bot.reply(message, "**COMMAND PREFIX**: " + commandPrefix + "\r\n**COMMANDS**: addfeed <url>, removefeed <url>, listfeeds", { tts: false }, function (err) { if (err) errHandler(err) });
                     break;
                 case 'addfeed':
-                    if (/^https?:\/\/[^\s]+\/feed\/?$/.test(words[0])) {
+                    if (/^https?:\/\/[^\s]+\/?$/.test(words[0])) {
                         db.run("INSERT INTO lookups (channel, url) VALUES (?, ?)", [message.channel.id, words[0].toLowerCase()], function (err) {
                             if (err) {
                                 errHandler(err);
