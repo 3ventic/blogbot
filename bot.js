@@ -135,12 +135,12 @@ function requestBlogs(index) {
             rss.on('readable', function () {
                 var stream = this, item;
                 while (item = stream.read()) {
-                    if (posted === false && item.link && posts.indexOf(item.link) < 0) {
+                    if (posted === false && item.title && item.link && posts.indexOf(item.link) < 0) {
                         posted = true;
                         db.run("INSERT INTO history (url, post) VALUES (?, ?)", [toRequest[index].url, item.link], function (err) { if (err) errHandler(err); });
                         toRequest[index].channels.forEach(function (channel) {
                             console.log("NEW POST", item.link);
-                            bot.sendMessage(channel, "**NEW POST** " + item.link);
+                            bot.sendMessage(channel, "**NEW POST** " + item.title + " " + item.link);
                         });
                     }
                 }
