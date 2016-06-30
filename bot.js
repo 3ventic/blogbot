@@ -185,7 +185,7 @@ function checkBlogs() {
         });
     }
 }
-setInterval(checkBlogs, 30000);
+setInterval(checkBlogs, 300000);
 
 function cleanUpAndExit() {
     bot.logout(function () {
